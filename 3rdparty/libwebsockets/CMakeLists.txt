@@ -385,7 +385,7 @@ endif()
 
 if (CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
     if (UNIX)
-	set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror -O4 -fvisibility=hidden" )
+	set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O4 -fvisibility=hidden" )
 	if(CMAKE_SYSTEM MATCHES "Linux")
 		include(CheckTypeSize)
 		check_type_size("void *" type_size)

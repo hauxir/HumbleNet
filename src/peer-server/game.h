@@ -4,6 +4,8 @@
 
 #include <unordered_map>
 #include <string>
+#include <random>
+
 
 namespace humblenet {
 
@@ -14,8 +16,8 @@ namespace humblenet {
 	struct Game {
 		PeerId generateNewPeerId()
 		{
-			PeerId peerId = nextPeerId;
-			nextPeerId++;
+                        static std::uniform_int_distribution<int> uid(1,INT_MAX); // random dice
+			PeerId peerId = uid(rng); // use rng as a generator
 			return peerId;
 		}
 
